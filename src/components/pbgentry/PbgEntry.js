@@ -9,7 +9,7 @@ export default function PbgEntry() {
   const [pstartdate, setPSDate] = useState("");
   const [penddate, setPEDate] = useState("");
 
-  const [contractData, setData] = useState([]);
+  const [contractData, setData] = useState([{}]);
 
 
 const addData=async ()=>{
@@ -38,7 +38,9 @@ const addData=async ()=>{
       .get(
         "https://shafi7468.github.io/json/contract.json"
       );      
-    setData(resData.data);
+           
+    setData(resData.data.contracts);
+  
   };
 
   useEffect(() => {
@@ -87,8 +89,7 @@ const addData=async ()=>{
           </div>
         </div>
       </form>
-
-      <table className="table table-bordered table stripped">
+   <table className="table table-bordered table stripped">
         <thead>
           <tr>
             <th>Contract Name</th>
@@ -114,6 +115,7 @@ const addData=async ()=>{
           })}
         </tbody>
       </table>
+   
     </>
   );
 }
