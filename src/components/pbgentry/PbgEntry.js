@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
+
 export default function PbgEntry() {
 
   const [name, setName] = useState("");
@@ -33,6 +34,15 @@ const addData=async ()=>{
     addData();
   };
 
+  const TextFile = () => {
+    const element = document.createElement("a");
+    const textFile = new Blob([[JSON.stringify('pass data from localStorage')], {type: 'text/plain'}]); 
+    element.href = URL.createObjectURL(textFile);
+    element.download = "userFile.txt";
+    document.body.appendChild(element); 
+    element.click();
+  }
+
   const getData = async () => {
     const resData = await axios
       .get(
@@ -41,7 +51,7 @@ const addData=async ()=>{
      console.log(resData.data.contracts);
      setData(resData.data.contracts);
      console.log(contractData[0]);
-
+     TextFile();
   
   };
 
