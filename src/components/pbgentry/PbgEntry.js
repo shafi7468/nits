@@ -16,7 +16,7 @@ const addData=async ()=>{
  try {
 
   const cData = {    "id": "3",    "name": name,    "cstartdate": cstartdate,    "cenddate": cenddate,    "pstartdate": pstartdate,    "penddate": penddate  }  ;
-  const response = await axios.post('https://shafi7468.github.io/json/contract.json', cData).then(res=>res.data);
+  const response = await axios.post('https://shafi7468.github.io/json/contract.json', cData);
   console.log(response);
      
 } catch (error) {
