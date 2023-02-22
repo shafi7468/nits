@@ -15,7 +15,9 @@ export default function PbgEntry() {
 const addData=async ()=>{
  try {
 
-  const cData = {    "id": "3",    "name": name,    "cstartdate": cstartdate,    "cenddate": cenddate,    "pstartdate": pstartdate,    "penddate": penddate  }  ;
+  //const cData = {    "id": "3",    "name": name,    "cstartdate": cstartdate,    "cenddate": cenddate,    "pstartdate": pstartdate,    "penddate": penddate  }  ;
+  const cData = {    "id": 2,    "name": "AAA",    "cstartdate": "22",    "cenddate": "10000",    "pstartdate": "10000",    "penddate": "10000"  };  
+
   const response = await axios.post('https://shafi7468.github.io/json/contract.json', cData);
   console.log(response);
      
