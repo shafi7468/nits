@@ -38,8 +38,10 @@ const addData=async ()=>{
       .get(
         "https://shafi7468.github.io/json/contract.json"
       );      
-           
-    setData(resData.data.contracts);
+     console.log(resData.data.contracts);
+     setData(resData.data.contracts);
+     console.log(contractData[0]);
+
   
   };
 
@@ -103,7 +105,7 @@ const addData=async ()=>{
           {contractData.map((contract, ind) => {
             return (
             
-                <tr>
+                <tr key={ind}>
                   <td>{contract.name}</td>
                   <td>{contract.cstartdate}</td>
                   <td>{contract.cenddate}</td>
